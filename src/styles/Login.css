@@ -1,4 +1,4 @@
-main{
+#login-main{
     margin: 0;
 
     background-image: url('../imgs/image\ 2.png');
@@ -13,7 +13,7 @@ main{
     justify-content: center;
     align-items: center;
 
-    padding: 58px 0 ;
+    padding: 62px 0 ;
     gap:10px;
 
     height: 100%;
@@ -73,7 +73,7 @@ main{
     width: 270px;
     
     border: 0.1px solid rgba(33, 33, 33, 0.1);
-    border-radius: 5px;
+    border-radius: 2px;
 
     box-shadow: 1px 1px 1px rgba(4, 4, 4, 0.123) ;
 
@@ -91,9 +91,8 @@ main{
     flex-direction: column;
 }
 
-#criar-conta button{
-    height: 30px;
-    width: 305px;
+#criar-conta a{
+   padding: 4px 63px;
 
     border: 0.1px solid rgba(33, 33, 33, 0.104);
     border-radius: 3px;
@@ -103,7 +102,6 @@ main{
     background-color: #3C617A;
     
     font-size: 15px;
+    text-decoration: none;
     color: aliceblue;
-
-
 }
