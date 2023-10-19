@@ -5,19 +5,22 @@ const login = ()=>{
     <main id="login-main">
        <section id ='imagem'> <img src={require("../imgs/Logo.png")} alt="" /></section>
         
-        <section id = "inputs">
-            <h3>Login</h3>
-            <div>
-                <label id="" htmlFor="email">Email</label>
-                <input  required name="email" type="email"  />
-            </div>
+        <section id = "form">
+            <form>
+                <h3>Login</h3>
 
-            <div>
-                <label htmlFor="password">Senha</label>
-                <input required name="password" type="password"/>  
-            </div>
+                <div className="input">
+                    <label  htmlFor="email">Email</label>
+                    <input  name="email" type="email"  required />
+                </div>
 
-            <button>Continuar</button>
+                <div  className="input">
+                    <label htmlFor="password">Senha</label>
+                    <input  name="password" type="password" required/>  
+                </div>
+
+                <div id= "continuar"> <button type="submit" > Continuar</button></div>
+            </form>
         </section>
 
         <section id='criar-conta'><a href="/register">Crie sua conta na Infor Tec</a></section>

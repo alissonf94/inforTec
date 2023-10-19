@@ -12,10 +12,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    padding: 106.6px 0 ;
+   
     gap: 10px;
-
     height: 100%;
     width: 100%
 
@@ -28,48 +26,107 @@ main form{
     align-items: flex-start;
 
     gap: 20px;
-    padding: 20px 10px;
-
+    
     border: 1px solid rgba(33, 33, 33, 0.079);
     border-radius: 7px;
 
     background-color: rgba(255, 255, 255, 0.968);
     
+    width:25% ;
+    height: 65%;
+
+    padding: 3px 5px;
+
+}
+.inputs{
+    width: 95%;
+    height: 30%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-form input{
-    height: 25px;
-    width: 270px;
+.inputs input{
+   
+    border: 0.1px solid rgba(33, 33, 33, 0.164);
+    border-radius: 15px;
+
+    box-shadow: 1px 1px 1px rgba(4, 4, 4, 0.079) ;
+
+    height: 60%;
+    width: 95%;
+
+    padding: 0 10px;
     
-    border: 0.1px solid rgba(33, 33, 33, 0.511);
-    border-radius: 2px;
-
-    box-shadow: 1px 1px 1px rgba(4, 4, 4, 0.182) ;
-
-    padding: 4px;
+}
+.inputs input:hover{
+    outline: 1px solid #16C1DD;
 }
 
 form label{
     font-size: 12px;
     display: block;
+    text-align: start;
+
+    margin-left: 5px;
 }
 
 #cpfAndBirthday{
     display: flex;
-    
+    width: 95%;
+    height: 25%;
+   
+    gap: 20px;
+}
+
+#cpfAndBirthday div{
+    height: 100%;  
+    width: 100%;  
 }
 
 #cpfAndBirthday input{
-    height: 25px;
-    width: 127px;
+    height: 60%;
+    width: 90%;
 
-    margin-right: 5px;
+    margin: 0;
+    padding: 0 10px;
+
+     
+    border: 0.1px solid rgba(33, 33, 33, 0.164);
+    border-radius: 12px;
+
+    box-shadow: 1px 1px 1px rgba(4, 4, 4, 0.079) ;
+
 }
 
+#cpfAndBirthday input:hover{
+    outline: 1px solid #16C1DD;
+}
 
-#enviar input{
+#returnLogin p {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 3px 3px;
     padding: 0;
 
-    width: 280px;
-    height: 30px;
+    font-size: 13px;
+}
+
+#enviar
+{
+    width: 100%;
+
+}
+
+#enviar input{
+    width: 50%;
+    height: 120%;
+    
+    border-radius: 10px;
+    border: 0;
+    border: 0.1px solid rgba(33, 33, 33, 0.164);
+
+    background-color: #3C617A;
+
+    color: white;
 }

@@ -4,17 +4,17 @@ const register = ()=>{
     return(
         <main id="register-main">
             <form id ="formulario">
-                <section>
+                <section className="inputs">
                     <label for= "name">Nome</label>
                     <input name="name"type="text" required />
                 </section>
                
-                <section>
+                <section className="inputs">
                     <label for= "email">Email</label>
                     <input name="email"type="email" required />
                 </section>
                
-                <section id="cpfAndBirthday">
+                <section  id="cpfAndBirthday">
                     <div>
                         <label for= "cpf">CPF</label>
                         <input name="cpf"type="text" required />
@@ -26,7 +26,7 @@ const register = ()=>{
                     </div>
                 </section>
                 
-                <section>
+                <section className="inputs">
                     <label for= "">Password</label>
                     <input name="password"type="password" required />
                 </section>
@@ -35,7 +35,7 @@ const register = ()=>{
                 <input type="submit" value= "Cadastrar"/>
                 </section>
 
-                <section><p>Você já tem sua conta? <a href="/">Fazer login.</a></p></section>
+                <section id="returnLogin"><p>Você já tem sua conta? <a href="/">Fazer login.</a></p></section>
             </form>
         </main>
     )
