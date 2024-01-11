@@ -1,106 +1,118 @@
-#register-main{
+#register-main {
     margin: 0;
 
     background-image: url('../imgs/image\ 2.png');
-   
+
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     background-position: right bottom;
-   
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   
+
     gap: 10px;
     height: 100%;
     width: 100%
-
 }
 
-main form{
+#form-register {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 
-    gap: 20px;
-    
-    border: 1px solid rgba(33, 33, 33, 0.079);
-    border-radius: 7px;
+    width: 24%;
+
+    height: 60%;
+}
+
+#form-register form {
 
     background-color: rgba(255, 255, 255, 0.968);
-    
-    width:25% ;
-    height: 65%;
 
-    padding: 3px 5px;
+    border-radius: 7px;
+    border: 0;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
 }
-.inputs{
+#form-register h3{
+    margin: 0.2em 0; 
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #3C617A;
+}
+.inputs {
     width: 95%;
     height: 30%;
-
+    
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.inputs input{
-   
+.inputs input {
+
     border: 0.1px solid rgba(33, 33, 33, 0.164);
     border-radius: 15px;
 
-    box-shadow: 1px 1px 1px rgba(4, 4, 4, 0.079) ;
+    box-shadow: 1px 1px 1px rgba(4, 4, 4, 0.079);
 
     height: 60%;
-    width: 95%;
-
+    width: 90%;
     padding: 0 10px;
-    
 }
-.inputs input:hover{
+
+.inputs input:hover {
     outline: 1px solid #16C1DD;
 }
 
-form label{
+form label {
     font-size: 12px;
     display: block;
     text-align: start;
-
-    margin-left: 5px;
 }
 
-#cpfAndBirthday{
+#cpfAndBirthday {
     display: flex;
     width: 95%;
     height: 25%;
-   
+
     gap: 20px;
 }
 
-#cpfAndBirthday div{
-    height: 100%;  
-    width: 100%;  
+#cpfAndBirthday div {
+    height: 100%;
+    width: 100%;
 }
 
-#cpfAndBirthday input{
-    height: 60%;
-    width: 90%;
+#cpfAndBirthday input {
+    height: 65%;
+    width: 77%;
 
     margin: 0;
     padding: 0 10px;
 
-     
     border: 0.1px solid rgba(33, 33, 33, 0.164);
-    border-radius: 12px;
+    border-radius: 15px;
 
-    box-shadow: 1px 1px 1px rgba(4, 4, 4, 0.079) ;
+    box-shadow: 1px 1px 1px rgba(4, 4, 4, 0.079);
 
 }
 
-#cpfAndBirthday input:hover{
+#cpfAndBirthday input:hover {
     outline: 1px solid #16C1DD;
 }
 
@@ -112,21 +124,15 @@ form label{
     font-size: 13px;
 }
 
-#enviar
-{
-    width: 100%;
-
-}
-
-#enviar input{
-    width: 50%;
-    height: 120%;
-    
-    border-radius: 10px;
+#registrar {
+    width: 93%;
+    height: 15%;
+    margin-bottom: 1em;
+    border-radius: 5px ;
+    background-color: #327CAD;
+    box-shadow: 1px 1px 2px rgba(4, 4, 4, 0.21) ;
+    font-size: 16px;
+    color: aliceblue;
     border: 0;
-    border: 0.1px solid rgba(33, 33, 33, 0.164);
-
-    background-color: #3C617A;
-
-    color: white;
 }
+

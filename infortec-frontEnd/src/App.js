@@ -1,5 +1,6 @@
 import Login from '../src/pages/Login'
 import Resgiter from "../src/pages/Register"
+import Home from "../src/pages/Home"
 import "./App.css"
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
@@ -12,6 +13,10 @@ function App() {
     {
       path: "/register",
       element: <Resgiter/>
+    },
+    {
+      path:"/home",
+      element:<Home/>
     }
   ])
 
