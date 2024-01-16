@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.alison.silva.unifacisa.infortec.dto.AuthenticationDTO;
 import com.alison.silva.unifacisa.infortec.dto.LoginResponseDTO;
-import com.alison.silva.unifacisa.infortec.dto.RegisterDTO;
+import com.alison.silva.unifacisa.infortec.dto.RegisterUserDTO;
 import com.alison.silva.unifacisa.infortec.entities.User;
 import com.alison.silva.unifacisa.infortec.infra.security.TokenService;
 import com.alison.silva.unifacisa.infortec.repositories.UserRepository;
@@ -41,8 +41,7 @@ public class AuthenticationController {
 	}
 	
 	@PostMapping("/register")
-	public ResponseEntity<User> register (@RequestBody RegisterDTO register) {
-		if(userRepository.findByEmail(register.email()) != null) return ResponseEntity.badRequest().build();
+	public ResponseEntity<User> register (@RequestBody RegisterUserDTO register) {
 		
 		String encryptedPassword =  new BCryptPasswordEncoder().encode(register.password());
 		

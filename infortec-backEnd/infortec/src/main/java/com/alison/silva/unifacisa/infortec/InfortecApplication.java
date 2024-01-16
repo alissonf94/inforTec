@@ -9,5 +9,5 @@ public class InfortecApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(InfortecApplication.class, args);
 	}
-
+ 
 }

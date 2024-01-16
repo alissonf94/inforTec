@@ -30,7 +30,7 @@ public class SecurityConfigurations {
 		return httpSecurity.csrf(csrf -> csrf.disable()).sessionManagement(
 				session -> session.sessionCreationPolicy(
 						SessionCreationPolicy.STATELESS)).authorizeHttpRequests(authorize -> 
-						authorize.requestMatchers(HttpMethod.POST, "/auth/register").permitAll().requestMatchers(HttpMethod.POST,"/auth/login").permitAll().anyRequest().authenticated())
+						authorize.requestMatchers(HttpMethod.POST, "/auth/register").permitAll().requestMatchers(HttpMethod.POST,"/auth/login").permitAll().requestMatchers(HttpMethod.POST, "product/register").permitAll().anyRequest().authenticated())
 				.addFilterBefore(securityFilter,UsernamePasswordAuthenticationFilter.class).build();	
 		}
 

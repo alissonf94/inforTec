@@ -1,7 +1,9 @@
+import NavBar from "../components/NavBar"
+import "../styles/Home.css"
 const register = ()=> {
     return (
-    <main>
-        hello word
+    <main id="mainHome">
+        <NavBar/>
     </main>
     )
 }
