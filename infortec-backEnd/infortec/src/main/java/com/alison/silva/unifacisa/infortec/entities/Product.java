@@ -1,9 +1,11 @@
 package com.alison.silva.unifacisa.infortec.entities;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Product {
@@ -16,14 +18,18 @@ public class Product {
 	private Double pricePromotion;
 	private String imgUrl;
 	private String brand;
+	@OneToOne(mappedBy = "product", cascade = CascadeType.ALL)
+	private Promotion promotion;
+	private String category;
 	
 	public Product() {}
-	public Product(String name, String description, Double price, String imgUrl, String brand) {
-		
+	public Product(String name, String description, Double price, String imgUrl, String brand, String category) {
 		this.name = name;
 		this.description = description;
 		this.price = price;
 		this.imgUrl = imgUrl;
+		this.brand = brand;
+		this.category = category;
 	}
 
 	public String getName() {
@@ -71,7 +77,21 @@ public class Product {
 	public void setBrand(String brand) {
 		this.brand = brand;
 	}
-	
+	public Promotion getPromotion() {
+		return promotion;
+	}
+	public void setPromotion(Promotion promotion) {
+		this.promotion = promotion;
+	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	public Long getId() {
+		return id;
+	}
 	
 	
 }

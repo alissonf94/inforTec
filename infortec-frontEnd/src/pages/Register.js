@@ -38,6 +38,7 @@ const Register = () => {
     return (
         <main id="register-main">
             <section id='imagem'> <img src={require("../imgs/Logo.png")} alt="" /></section>
+            
             <section id="form-register">
                 <form onSubmit={handleSumit}>
                     <h3>Register</h3>
