@@ -19,10 +19,8 @@ import jakarta.persistence.Id;
 @Entity
 @Table(name = "users")
 public class User implements UserDetails{
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long Id;
@@ -30,14 +28,18 @@ public class User implements UserDetails{
 	private String cpf;
 	private String email;
 	private String password;
+	
 	@JsonFormat(shape = JsonFormat.Shape.STRING)
 	private UserRole role;
 	
+	private ShoppingCart shoppingCart;
+	private List<Buy> buys;
+	
 	public User() {}
+	
 	public User(String name, String cpf, String email, String password, UserRole role) {
 		super();
 		this.name = name;
-		this.cpf = cpf;
 		this.email = email;
 		this.password = password;
 		this.role =  role;
@@ -74,7 +76,16 @@ public class User implements UserDetails{
 	public void setPassword(String password) { 
 		this.password = password;
 	}
+	
 
+	public ShoppingCart getShoppingCart() {
+		return shoppingCart;
+	}
+	
+	
+	public List<Buy> getBuys() {
+		return buys;
+	}
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO Auto-generated method stub

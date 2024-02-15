@@ -50,11 +50,11 @@ const Home = ()=> {
                 }
             )
             }
-            </div>
-            <div className="buttons" >
-                    <SlArrowLeft size={40}  onClick={handleLeftClick} color="white" className="button"/>
-                    <SlArrowRight onClick={handleRightClick} color ="white"size={40} className="button"/>
-            </div>
+                </div>
+                <div className="buttons" >
+                        <SlArrowLeft size={40}  onClick={handleLeftClick} color="white" className="button"/>
+                        <SlArrowRight onClick={handleRightClick} color ="white"size={40} className="button"/>
+                </div>
             </div>
     </main>
     )

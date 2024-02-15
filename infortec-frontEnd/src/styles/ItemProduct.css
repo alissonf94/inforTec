@@ -41,13 +41,6 @@
     margin: 10 0;
     color: #327CAD;
 }
-
-.old-price{
-    font-size: 0.9rem; 
-    text-decoration: line-through;
-    color: #1254c6;
-}
-
 .current-price{
     font-size: 0.9rem; 
     font-weight: bold;

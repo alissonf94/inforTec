@@ -33,7 +33,6 @@ public class PromotionService {
 	
 	public List<PromotionMinDTO> findAll() {
 		List<Promotion> promotions = promotionRepository.findAll();
-		
 		List<PromotionMinDTO> dtos = promotions.stream().map(p -> new PromotionMinDTO(p)).toList();
 		return dtos;
 	}

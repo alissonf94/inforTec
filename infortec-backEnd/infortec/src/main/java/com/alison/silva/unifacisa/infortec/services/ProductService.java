@@ -34,10 +34,12 @@ public class ProductService {
 		return product;
 	}
 	
-	public List<ProductMinDTO> findAll(){
+	public List<ProductMinDTO> findByCategory(String category){
 		List<Product> products =  productRepository.findAll();
 		
-		List<ProductMinDTO> dtos = products.stream().map(p -> new ProductMinDTO(p)).toList();
+		List<Product> productsByCategory = products.stream().filter(p -> p.getCategory().equals(category)).toList();
+		
+		List<ProductMinDTO> dtos = productsByCategory.stream().map(p -> new ProductMinDTO(p)).toList();
 		
 		return dtos;
 	}

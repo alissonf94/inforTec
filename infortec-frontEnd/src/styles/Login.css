@@ -88,9 +88,9 @@
     box-shadow: 1px 1px 1px rgba(4, 4, 4, 0.079) ;
 
     outline: none;
-    padding: 0;
-
-    height: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    height: 100px;
     width: 100%;
 }
 

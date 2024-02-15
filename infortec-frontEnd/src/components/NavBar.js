@@ -4,11 +4,14 @@ import { CiLogin } from "react-icons/ci";
 import "../styles/NavBar.css"
 import { BsHeart } from "react-icons/bs";
 import { BsSearch } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
+
 export default function NavBar(){
+const navigate = useNavigate()
     return(
         <div id="mainNavBar">
             <section id="sectionSearch">
-                <img id="imgLogo" src={require("../imgs/Logo.png")} alt=""></img>
+                <img id="imgLogo" src={require("../imgs/Logo.png")} alt="" onClick={()=> navigate("/home") }></img>
                 <div id="searchContainer">
                     <BsSearch id="iconSearch" color="#327CAD" size={20} />
                     <input id="search"></input>
@@ -21,10 +24,10 @@ export default function NavBar(){
                 </div>
             </section>
             <section id="sectionTypesProducts">
-                <a>Computadores</a>
-                <a>Monitores</a>
-                <a>Games</a>
-                <a>Acessórios</a>
+                <a href="/computers">Computadores</a>
+                <a href="/monitors">Monitores</a>
+                <a href="/keyboards">Teclados</a>
+                <a href="/accessories">Acessórios</a>
             </section>
         </div>
     )

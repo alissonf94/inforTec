@@ -32,7 +32,7 @@ public class SecurityConfigurations {
 						SessionCreationPolicy.STATELESS)).authorizeHttpRequests(authorize -> 
 						authorize.requestMatchers(HttpMethod.POST, "/auth/register").permitAll().requestMatchers(HttpMethod.POST,"/auth/login").permitAll().
 						requestMatchers(HttpMethod.POST, "products/register").permitAll().requestMatchers(HttpMethod.POST, "/promotions/register").permitAll().
-						requestMatchers(HttpMethod.GET, "/products").permitAll().
+						requestMatchers(HttpMethod.GET, "/products/{category}").permitAll().
 						requestMatchers(HttpMethod.GET,"/promotions" ).permitAll().
 						anyRequest().authenticated())
 				.addFilterBefore(securityFilter,UsernamePasswordAuthenticationFilter.class).build();	

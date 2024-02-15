@@ -2,7 +2,6 @@
 
 #mainHome{
     background-image: url('../imgs/image\ 2.png');
-   
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -10,9 +9,6 @@
 
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 .carousel{
@@ -39,14 +35,16 @@
     
 }
 
-
 .promotions{
-    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .title{
     font-family:"Anton", sans-serif;
     font-weight: 400;
+    width: 50%;
+    margin: 30px auto;
     font-style: normal;
     color:white;
     font-size: 3em;
