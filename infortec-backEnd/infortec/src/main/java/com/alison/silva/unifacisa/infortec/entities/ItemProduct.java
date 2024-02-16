@@ -1,11 +1,29 @@
 package com.alison.silva.unifacisa.infortec.entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
+
+@Entity
 public class ItemProduct {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	
+	@OneToOne
 	private Product product;
+	
 	private Integer quantityProduct;
 	private Double valueItem;
+	
+	@ManyToOne
+	@JoinColumn(name = "shoppingCart_id")
 	private ShoppingCart shoppingCart;
-	private Buy buy;
+	
 	
 	public ItemProduct() {
 		
@@ -44,14 +62,5 @@ public class ItemProduct {
 	public ShoppingCart getShoppingCart() {
 		return shoppingCart;
 	}
-
-	public Buy getBuy() {
-		return buy;
-	}
-
-	public void setBuy(Buy buy) {
-		this.buy = buy;
-	}
-	
 	
 }

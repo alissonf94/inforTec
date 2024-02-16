@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.alison.silva.unifacisa.infortec.dto.AuthenticationDTO;
 import com.alison.silva.unifacisa.infortec.dto.LoginResponseDTO;
 import com.alison.silva.unifacisa.infortec.dto.RegisterUserDTO;
+import com.alison.silva.unifacisa.infortec.entities.ShoppingCart;
 import com.alison.silva.unifacisa.infortec.entities.User;
 import com.alison.silva.unifacisa.infortec.infra.security.TokenService;
-import com.alison.silva.unifacisa.infortec.repositories.UserRepository;
+import com.alison.silva.unifacisa.infortec.repositories.ShoppingCartRepository;
+import com.alison.silva.unifacisa.infortec.services.AuthenticationService;
 
 @RestController
 @RequestMapping("auth")
@@ -25,10 +27,13 @@ public class AuthenticationController {
 	AuthenticationManager authenticationManager;
 	
 	@Autowired
-	UserRepository userRepository;
+	private TokenService tokenService;
 	
 	@Autowired
-	private TokenService tokenService;
+	private AuthenticationService authenticationService;
+	
+	@Autowired
+	ShoppingCartRepository shoppingCartRepository;
 	
 	@PostMapping("/login")
 	public ResponseEntity<LoginResponseDTO> login(@RequestBody AuthenticationDTO data) {
@@ -41,14 +46,19 @@ public class AuthenticationController {
 	}
 	
 	@PostMapping("/register")
-	public ResponseEntity<User> register (@RequestBody RegisterUserDTO register) {
+	public ResponseEntity<RegisterUserDTO> register (@RequestBody RegisterUserDTO register) {
 		
 		String encryptedPassword =  new BCryptPasswordEncoder().encode(register.password());
 		
 		User user = new User(register.name(), register.cpf(), register.email(), encryptedPassword, register.role());
 		
-		userRepository.save(user);
-		return ResponseEntity.status(HttpStatus.CREATED).body(user);
+		ShoppingCart shoppingCart = new ShoppingCart(user);
+		user.setShoppingCart(shoppingCart);
+		
+		authenticationService.register(user);
+		
+	
+		return ResponseEntity.status(HttpStatus.CREATED).body(register);
 		
 	}
 

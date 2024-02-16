@@ -1,6 +1,5 @@
 package com.alison.silva.unifacisa.infortec.entities;
 
-import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -20,11 +19,10 @@ public class Product {
 	private Double pricePromotion;
 	private String imgUrl;
 	private String brand;
+	
 	@OneToOne(mappedBy = "product", cascade = CascadeType.ALL)
 	private Promotion promotion;
 	
-	private List<ItemProduct> items;
-	private List<ShoppingCart> shoppingCarts;
 	private String category;
 	
 	public Product() {}
@@ -97,15 +95,6 @@ public class Product {
 	public Long getId() {
 		return id;
 	}
-	public List<ItemProduct> getItems() {
-		return items;
-	}
-	public List<ShoppingCart> getShoppingCarts() {
-		return shoppingCarts;
-	}
-	public void setShoppingCarts(List<ShoppingCart> shoppingCarts) {
-		this.shoppingCarts = shoppingCarts;
-	}
-	
+
 	
 }
