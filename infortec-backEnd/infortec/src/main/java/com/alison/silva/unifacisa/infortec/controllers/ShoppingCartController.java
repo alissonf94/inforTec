@@ -1,16 +1,18 @@
 package com.alison.silva.unifacisa.infortec.controllers;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.alison.silva.unifacisa.infortec.entities.ShoppingCart;
+import com.alison.silva.unifacisa.infortec.dto.RegisterItemProduct;
+import com.alison.silva.unifacisa.infortec.dto.ShoppingCartMinDTO;
+import com.alison.silva.unifacisa.infortec.entities.ItemProduct;
 import com.alison.silva.unifacisa.infortec.services.ShoppingCartService;
 
 @RestController
@@ -21,8 +23,12 @@ public class ShoppingCartController {
 	ShoppingCartService shoppingCartService;
 	
 	@GetMapping("/{id}")
-	public List<ShoppingCart> findShoppingCartByEmailUser (@PathVariable Long id) {
-		return shoppingCartService.findShoppingCartByIdClient(id);
+	public ResponseEntity<ShoppingCartMinDTO> findShoppingCartByEmailUser (@PathVariable Long id) {
+		return ResponseEntity.status(HttpStatus.OK).body(shoppingCartService.findShoppingCartByIdClient(id));
 	}
 	
+	@PutMapping
+	public ResponseEntity<ItemProduct> addItemProduct(@RequestBody RegisterItemProduct registerItemProduct){
+		return ResponseEntity.status(HttpStatus.CREATED).body(shoppingCartService.addItemProduct(registerItemProduct));
+	}
 }

@@ -29,10 +29,11 @@ public class ItemProduct {
 		
 	}
 
-	public ItemProduct(Product product, Integer quantityProduct, Double valueItem) {
+	public ItemProduct(Product product, Integer quantityProduct, Double valueItem, ShoppingCart shoppingCart) {
 		this.product = product;
 		this.quantityProduct = quantityProduct;
 		this.valueItem = valueItem;
+		this.shoppingCart = shoppingCart;
 	}
 
 	public Product getProduct() {
@@ -62,5 +63,10 @@ public class ItemProduct {
 	public ShoppingCart getShoppingCart() {
 		return shoppingCart;
 	}
+
+	public Long getId() {
+		return id;
+	}
+	
 	
 }
