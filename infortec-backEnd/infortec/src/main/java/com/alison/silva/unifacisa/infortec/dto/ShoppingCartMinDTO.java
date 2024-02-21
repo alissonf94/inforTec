@@ -2,7 +2,6 @@ package com.alison.silva.unifacisa.infortec.dto;
 
 import java.util.List;
 
-import com.alison.silva.unifacisa.infortec.entities.ItemProduct;
 import com.alison.silva.unifacisa.infortec.entities.ShoppingCart;
 
 public class ShoppingCartMinDTO {
