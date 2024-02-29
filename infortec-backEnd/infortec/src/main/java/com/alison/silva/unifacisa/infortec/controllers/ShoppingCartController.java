@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.alison.silva.unifacisa.infortec.dto.ItemProductMinDTO;
 import com.alison.silva.unifacisa.infortec.dto.RegisterItemProduct;
 import com.alison.silva.unifacisa.infortec.dto.ShoppingCartMinDTO;
-import com.alison.silva.unifacisa.infortec.entities.ItemProduct;
 import com.alison.silva.unifacisa.infortec.services.ShoppingCartService;
 
 @RestController
@@ -28,7 +28,7 @@ public class ShoppingCartController {
 	}
 	
 	@PutMapping
-	public ResponseEntity<ItemProduct> addItemProduct(@RequestBody RegisterItemProduct registerItemProduct){
+	public ResponseEntity<ItemProductMinDTO> addItemProduct(@RequestBody RegisterItemProduct registerItemProduct){
 		return ResponseEntity.status(HttpStatus.CREATED).body(shoppingCartService.addItemProduct(registerItemProduct));
 	}
 }

@@ -7,4 +7,5 @@ import com.alison.silva.unifacisa.infortec.entities.User;
 
 public interface UserRepository extends JpaRepository<User,Long>{
 	UserDetails findByEmail (String email);
+	
 }

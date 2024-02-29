@@ -17,7 +17,7 @@ public class ProductService {
 
 	public Product registerProduct(Product product) {
 
-		Product verifyProduct = productRepository.findOneByName(product.getName());
+		Product verifyProduct = productRepository.findByName(product.getName());
 
 		if (verifyProduct != null) {
 			throw new DataIntegrityViolationException("Product already exist");
@@ -29,17 +29,15 @@ public class ProductService {
 	}
 	
 	public Product findOneByName(String name) {
-		Product product = productRepository.findOneByName(name);
+		Product product = productRepository.findByName(name);
 	
 		return product;
 	}
 	
 	public List<ProductMinDTO> findByCategory(String category){
-		List<Product> products =  productRepository.findAll();
+		List<Product> products = productRepository.findByCategory(category);
 		
-		List<Product> productsByCategory = products.stream().filter(p -> p.getCategory().equals(category)).toList();
-		
-		List<ProductMinDTO> dtos = productsByCategory.stream().map(p -> new ProductMinDTO(p)).toList();
+		List<ProductMinDTO> dtos = products.stream().map(p -> new ProductMinDTO(p)).toList();
 		
 		return dtos;
 	}

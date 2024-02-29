@@ -6,7 +6,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
 
 @Entity
 public class ItemProduct {
@@ -14,7 +13,8 @@ public class ItemProduct {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@OneToOne
+	@ManyToOne
+	@JoinColumn(name = "product_id")
 	private Product product;
 	
 	private Integer quantityProduct;
@@ -23,7 +23,6 @@ public class ItemProduct {
 	@ManyToOne
 	@JoinColumn(name = "shoppingCart_id")
 	private ShoppingCart shoppingCart;
-	
 	
 	public ItemProduct() {
 		
@@ -67,6 +66,9 @@ public class ItemProduct {
 	public Long getId() {
 		return id;
 	}
-	
+
+	public void setShoppingCart(ShoppingCart shoppingCart) {
+		this.shoppingCart = shoppingCart;
+	}
 	
 }

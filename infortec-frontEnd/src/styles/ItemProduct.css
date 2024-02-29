@@ -1,53 +1,94 @@
-.image{
-    width: 100%;
-    height: 100%;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-.image-item{
-    width: 230px;
-    height: 130px;
-}
-
-.item{
-    width: 240px;
-    margin: 10px;
-    padding: 10px;
+.itemProduct{
     background-color: white;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.info{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 150px;
-    margin: 10px;
-}
-
-.info span {
-    display: block;
-    text-align: center;
-    padding: 5px;
     border-radius: 10px;
+    height: 430px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.5em;
 }
 
-.name-item{
-    font-size: 0.8rem;
-    font-weight: bold;
-    margin: 10 0;
-    color: #327CAD;
+.images-itemProduct{
+    width: 100%;
+    height: 180px;
 }
-.current-price{
-    font-size: 0.9rem; 
-    font-weight: bold;
+
+.image-itemProduct{
+    width: 80%;
+    height: 180px;
     margin-top: 5px;
-    background-color: #327CAD;
+    object-fit:  contain;
+}
+.name-itemProduct{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+}
+.valeu-itemProduct{
+    font-size: 0.75rem;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+    color: #030303;
+    width: 90%;
+    text-align: center;
 }
 
-.name{
-    height: 25%;
+.prices-itemProduct{
+    position: relative;
+    margin-left: 10px;
+    width: 100%;
+}
+.prices-itemProduct span{
+    font-family: "Poppins" , sans-serif;
+    margin: 0 5px;
+    
+}
+
+.prices-itemProduct .price-itemProduct{
+    font-weight: bold;
+    color: #327CAD;
+    font-size:  1.2rem;
+    position: absolute;
+    left: 5px;
+    top: 1px;
+}
+
+.prices-itemProduct .type-pagament{
+    font-size: 0.85em;
+    color: rgb(79, 85, 92);
+    position: absolute;
+    left: 5px;
+    top: 20px;
+
+    
+}
+
+.buy-itemProduct{
+    width: 100%;
+    margin-top: 30px;
+}
+.buy-itemProduct button{
+    width: 95%;
+    height: 40px;
+    background-color: #327CAD;
+    
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    border: none;
+    font-size: 0.9em
+}
+.buy-itemProduct button:hover{
+    font-weight: 800;
+}
+
+.favorite{
+    position: absolute;
+    right: 30px;
+    top: 5px;
 }

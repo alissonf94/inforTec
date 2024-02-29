@@ -6,5 +6,5 @@ import com.alison.silva.unifacisa.infortec.entities.ShoppingCart;
 import com.alison.silva.unifacisa.infortec.entities.User;
 
 public interface ShoppingCartRepository extends JpaRepository<ShoppingCart,Long> {
-	ShoppingCart findOnedByClient(User client);
+	ShoppingCart findByClient(User client);
 }

@@ -1,6 +1,5 @@
 import { BsCart3 } from "react-icons/bs";
 import { BsPersonCircle } from "react-icons/bs";
-import { CiLogin } from "react-icons/ci";
 import "../styles/NavBar.css"
 import { BsHeart } from "react-icons/bs";
 import { BsSearch } from "react-icons/bs";

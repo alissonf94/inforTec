@@ -1,5 +1,6 @@
 package com.alison.silva.unifacisa.infortec.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.Entity;
@@ -27,10 +28,10 @@ public class Buy {
 	
 	public Buy  () {}
 	
-	public Buy(List<ItemProduct> items, User client, Double valueBuy) {
-		this.items = items;
+	public Buy( User client, Double valueBuy) {
 		this.client = client;
 		this.valueBuy = valueBuy;
+		this.items = new ArrayList<ItemProduct>();
 	}
 
 	public List<ItemProduct> getItems() {
