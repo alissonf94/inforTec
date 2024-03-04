@@ -19,7 +19,6 @@ const Accessories = ()=>{
         getProducts()
     }, [])
     
-    console.log(products);
     return (
         <div id="mainProduct">
                 <NavBar/>

@@ -23,6 +23,11 @@ const Login = () => {
             
             if(response.status === 200){
                navigate("/home")
+               const result = await response.json()
+               localStorage.setItem("token", `Bearer ${result.token}`)
+               localStorage.setItem("userEmail", result.client.email)
+               localStorage.setItem("userName", result.client.name)
+               localStorage.setItem("userId", result.client.id)  
             }
 
         } 

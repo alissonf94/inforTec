@@ -6,7 +6,7 @@ import "../styles/Product.css"
 
 const Computers = ()=>{
     const [products, setProduct] = useState([])
-
+    
     async function getProducts () {
         const result = await ProductService.findByCategory("Computadores");
         

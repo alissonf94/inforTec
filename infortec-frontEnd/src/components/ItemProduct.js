@@ -1,6 +1,20 @@
+import { useEffect, useState } from "react";
 import "../styles/ItemProduct.css"
 import { BsHeart } from "react-icons/bs";
+import ShoppingCartService from "../services/ShoppingCartService"
+
 const ItemProduct = (props)=>{
+    async function handleAddItemCart(nameProduct, idClient, quantityProduct){
+        const data = {nameProduct, idClient, quantityProduct}
+
+        await ShoppingCartService.addItemCart(data)
+    }
+
+    const [idClient, setClient] = useState("")
+    useEffect(()=>{
+        setClient(localStorage.getItem("userId"))
+    }, [])
+    
    return (
         <div className="itemProduct" key={props.id}>
             
@@ -17,7 +31,7 @@ const ItemProduct = (props)=>{
                 <BsHeart className="favorite" color="#327CAD" size={25}/>
             </div>
             <div className="buy-itemProduct">
-                <button> Comprar</button>
+                <button onClick={()=> handleAddItemCart(props.name, idClient, 1)}> Comprar</button>
             </div>
         </div>
     )

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.alison.silva.unifacisa.infortec.dto.AuthenticationDTO;
 import com.alison.silva.unifacisa.infortec.dto.LoginResponseDTO;
 import com.alison.silva.unifacisa.infortec.dto.RegisterUserDTO;
+import com.alison.silva.unifacisa.infortec.dto.UserMinDTO;
 import com.alison.silva.unifacisa.infortec.entities.ShoppingCart;
 import com.alison.silva.unifacisa.infortec.entities.User;
 import com.alison.silva.unifacisa.infortec.infra.security.TokenService;
@@ -41,8 +42,9 @@ public class AuthenticationController {
 		
 		var auth = this.authenticationManager.authenticate(usernamePassword);
 		var token = tokenService.generateToken((User) auth.getPrincipal());
+		User client = (User) authenticationService.loadUserByUsername(data.email());
 		
-		return ResponseEntity.ok(new LoginResponseDTO(token));
+		return ResponseEntity.ok(new LoginResponseDTO(token,new UserMinDTO(client.getName(), client.getEmail(), client.getId())));
 	}
 	
 	@PostMapping("/register")
