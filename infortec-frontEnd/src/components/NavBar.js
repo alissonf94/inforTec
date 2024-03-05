@@ -18,13 +18,13 @@ const navigate = useNavigate()
                 
                 <div id="icons">
                     <BsHeart color="#fff"  size={22} />
-                    <BsCart3 color="#ffff"  size={22}/>
+                    <BsCart3 onClick={()=> navigate("/shoppingCart")} color="#ffff"  size={22}/>
                     <BsPersonCircle color="#fff"  size={23}/>
                 </div>
             </section>
             <section id="sectionTypesProducts">
                 <a href="/computers">Computadores</a>
-                <a href="/monitors">Monitores</a>
+                <a href="/monitors">Monitores</a> 
                 <a href="/keyboards">Teclados</a>
                 <a href="/accessories">Acessórios</a>
             </section>

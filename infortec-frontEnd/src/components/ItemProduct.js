@@ -11,6 +11,7 @@ const ItemProduct = (props)=>{
     }
 
     const [idClient, setClient] = useState("")
+    
     useEffect(()=>{
         setClient(localStorage.getItem("userId"))
     }, [])
@@ -31,7 +32,7 @@ const ItemProduct = (props)=>{
                 <BsHeart className="favorite" color="#327CAD" size={25}/>
             </div>
             <div className="buy-itemProduct">
-                <button onClick={()=> handleAddItemCart(props.name, idClient, 1)}> Comprar</button>
+                <button onClick={()=>   handleAddItemCart(props.name, idClient, 1)}> Comprar</button>
             </div>
         </div>
     )

@@ -7,7 +7,7 @@ import Monitors from './pages/Monitors'
 import "./App.css"
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Keyboard from './pages/Keyboard'
-
+import ShoppingCart from "./pages/ShoppingCart"
 function App() {
   const defaultRouter = createBrowserRouter([
     {
@@ -37,6 +37,10 @@ function App() {
     {
       path: "/monitors",
       element: <Monitors/>
+    },
+    {
+      path: "/shoppingCart",
+      element: <ShoppingCart/>
     }
   ])
 

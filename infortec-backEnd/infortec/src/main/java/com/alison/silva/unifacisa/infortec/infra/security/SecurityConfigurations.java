@@ -36,7 +36,9 @@ public class SecurityConfigurations {
 						requestMatchers(HttpMethod.GET,"/promotions" ).permitAll().requestMatchers(HttpMethod.GET, "/shoppingCarts/{id}").permitAll().
 						requestMatchers(HttpMethod.PUT, "/shoppingCarts").permitAll().requestMatchers(HttpMethod.DELETE,"/itemProduct/{id}").permitAll()
 						.requestMatchers(HttpMethod.POST,"/buys").permitAll().requestMatchers(HttpMethod.GET,"/buys/{id}").permitAll().
+						requestMatchers(HttpMethod.PUT,"/itemProduct").permitAll().
 						anyRequest().authenticated())
+
 				.addFilterBefore(securityFilter,UsernamePasswordAuthenticationFilter.class).build();	
 		}
 
