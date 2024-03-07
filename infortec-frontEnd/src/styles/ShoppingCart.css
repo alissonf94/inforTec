@@ -1,0 +1,6 @@
+.itens{
+    display: grid;
+    margin-top:10px;
+    gap: 36.8px;
+    width: 80%;
+}

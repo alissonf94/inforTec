@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.itemCart{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 160px;
+    background-color: white;
+}
+
+.information-itemCart{
+    display: flex;
+    align-items: center;
+    width:60%;
+}
+.image-itemCart{
+    height: 150px;
+    margin: 15px 10px 0 10px;
+    width: 40%;
+}
+.image-itemCart img{
+    height: 110px;
+    object-fit: contain;
+}
+.information-itemCart .description-itemCart{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 80%;
+}
+
+.description-itemCart span{
+    font-family: "Poppins", sans-serif;
+}
+.description-itemCart .name-ItemCart{
+    display: flex;
+    background-color: aqua;
+    justify-content: start;
+    align-items: start;
+
+}
+ .description-itemCart .name-ItemCart span{
+    font-weight: bolder;
+}
+.description-itemCart .brand-itemCart span{
+    color:#7f858d;
+}
+.description-itemCart .price-itemCart span{
+    font-weight: bolder;
+    color: #7f858d;
+}
+
+.functions{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 15px;
+    width: 20%;
+}
+
+.functions .spanQuantity span{
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+
+.functions .updateQuantity{
+    display: flex;
+    justify-content: center;
+}
+.functions .updateQuantity span{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    font-size: 1em;
+}
+
+.value-itemCart{
+    width: 50%;
+}

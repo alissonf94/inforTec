@@ -16,6 +16,7 @@ function getItemsProducts (id){
         }
     })
 }
+
 module.exports = {
     addItemCart,
     getItemsProducts

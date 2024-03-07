@@ -19,9 +19,13 @@ public class ItemProductService {
 	}
 	
 	public ItemProduct updateQuantityProductById(UpdateItemProduct updateItemProduc) {
+		
 		ItemProduct itemProduct =  itemProductRepository.findById(updateItemProduc.idProduct()).orElse(null);
 		
+		Double newValueItem = itemProduct.getProduct().getPrice() * updateItemProduc.newQuantityProduct();
+		itemProduct.setValueItem(newValueItem);
 		itemProduct.setQuantityProduct(updateItemProduc.newQuantityProduct());
+		
 		itemProductRepository.save(itemProduct);
 		
 		return itemProduct;
