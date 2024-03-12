@@ -8,6 +8,15 @@ function updateItemProduct(data){
     })
 }
 
+function deleteItemProduct (id){
+    return fetch(`http://localhost:8080/itemProduct/${id}`,{
+        method: "DELETE",
+        headers:{
+            "Content-type":"Application/json"
+        }
+    })
+}
 module.exports = {
-    updateItemProduct
+    updateItemProduct,
+    deleteItemProduct
 }

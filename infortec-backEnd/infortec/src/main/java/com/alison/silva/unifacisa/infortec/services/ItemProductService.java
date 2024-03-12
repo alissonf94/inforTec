@@ -1,6 +1,7 @@
 package com.alison.silva.unifacisa.infortec.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import com.alison.silva.unifacisa.infortec.dto.UpdateItemProduct;
@@ -15,7 +16,15 @@ public class ItemProductService {
 	
 	public void deletefindById(Long id) 
 	{
-		itemProductRepository.deleteById(id);
+		ItemProduct itemProduct = itemProductRepository.findById(id).orElse(null);
+		
+		if(itemProduct.getShoppingCart() != null) {
+			itemProductRepository.deleteById(id);
+		}
+		else {
+			throw new DataIntegrityViolationException("ItemProduct not in shoppingCart");
+		}
+	
 	}
 	
 	public ItemProduct updateQuantityProductById(UpdateItemProduct updateItemProduc) {

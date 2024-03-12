@@ -34,7 +34,9 @@ public class ShoppingCartService {
 		User client = userRepository.findById(id).orElse(null);
 		
 		ShoppingCart shoppingCart = shoppingCartRepository.findByClient(client);
-		ShoppingCartMinDTO cartMinDTO = new ShoppingCartMinDTO(shoppingCart);
+		
+		Double valeuBuy = shoppingCart.getItems().stream().mapToDouble(p-> p.getValueItem()).sum();
+		ShoppingCartMinDTO cartMinDTO = new ShoppingCartMinDTO(shoppingCart, valeuBuy);
 		
 		List<ItemProductMinDTO> dtos = shoppingCart.getItems().stream().map(p-> new ItemProductMinDTO(p)).toList();
 		cartMinDTO.setItens(dtos);

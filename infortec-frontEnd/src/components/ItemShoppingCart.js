@@ -4,25 +4,31 @@ import { BsChevronLeft } from "react-icons/bs";
 import ItemProductService from "../services/ItemProductService"
 import "../styles/ItemCart.css"
 import { MdDeleteOutline } from "react-icons/md";
+
 const ItemShoppingCart = (props) => {
     const [quantityProduct, setQuantityProduct] = useState(props.quantity)
     
+    async function handleDeleteItemProduct (id){
+        await ItemProductService.deleteItemProduct(id)
+    }
+
     async function handleUpdateQuantityProduct (idProduct, newQuantityProduct){
-        if(newQuantityProduct >= 0){
+        if(newQuantityProduct > 0){
             setQuantityProduct(newQuantityProduct)
         }
-        else if(newQuantityProduct < 0){
-            setQuantityProduct(0)
-            newQuantityProduct = 0
+       
+        else if(newQuantityProduct <= 0){
+            setQuantityProduct(1)
+            newQuantityProduct = 1
         }
-
         const data = {idProduct, newQuantityProduct}
         await ItemProductService.updateItemProduct(data)
         window.location.reload(true)
     }
-    
+    const price = props.valueItem.toFixed(2);
     return(
         <div className="itemCart" key={props.id}>
+    
             <div className="information-itemCart"> 
                 <div className="image-itemCart">
                     <img src={props.urlImage} />
@@ -40,7 +46,7 @@ const ItemShoppingCart = (props) => {
                     </div>
                 </div>
             </div>
-
+            
             <div className="functions">
                 <div className="spanQuantity">
                     <span>Quant.</span>
@@ -51,11 +57,12 @@ const ItemShoppingCart = (props) => {
                     <BsChevronRight className="icon" size={20} color="#7f858d" onClick={()=> handleUpdateQuantityProduct(props.id, quantityProduct + 1)}/>
                 </div>
                 <div>
-                    <  MdDeleteOutline size={25} color="#7f858d"/>
+                    <  MdDeleteOutline onClick={()=> handleDeleteItemProduct(props.id)} size={25} color="#7f858d"/>
                 </div>
             </div>
+
             <div className="value-itemCart">
-                <span>{props.valueItem}</span>
+                <span>R$ {price}</span>
             </div>
         </div>
     )

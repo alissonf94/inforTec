@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "../styles/ItemProduct.css"
 import { BsHeart } from "react-icons/bs";
 import ShoppingCartService from "../services/ShoppingCartService"
+import ItemProductService from "../services/ItemProductService";
 
 const ItemProduct = (props)=>{
     async function handleAddItemCart(nameProduct, idClient, quantityProduct){
@@ -9,6 +10,8 @@ const ItemProduct = (props)=>{
 
         await ShoppingCartService.addItemCart(data)
     }
+
+  
 
     const [idClient, setClient] = useState("")
     

@@ -1,6 +1,48 @@
+
+.container-shoppingCart{
+    background-image: url("../imgs/carrinhos-de-compras-em-fundo-azul-com-copia-espaco.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: right bottom;
+    width: 100%;
+    min-height: 729.6px;
+    
+}
+.container2-shoppingCart{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 .itens{
-    display: grid;
-    margin-top:10px;
-    gap: 36.8px;
-    width: 80%;
+    margin:10px 0 10px 10px;
+    width: 70%;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.255);
+    
+}
+.title-itensShoppingCart{
+    background-color: white;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 100px;
+    border-bottom: 1.5px solid rgba(136, 135, 135, 0.104);
+}
+
+.title-itensShoppingCart h2{
+    margin-left: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left:5px ;
+}
+
+.title-itensShoppingCart .icon-title{
+    margin-left: 20px;
+}
+.information-valueBuy{
+    background-color: white;
+    display: flex;
+    align-items: baseline;
+    flex-direction: column;
 }

@@ -9,11 +9,13 @@ public class ShoppingCartMinDTO {
 	private List<ItemProductMinDTO> itens;
 	private Long idClient;
 	private String emailClient;
+	private Double valueBuy;
 	
-	public ShoppingCartMinDTO(ShoppingCart shoppingCart) {
+	public ShoppingCartMinDTO(ShoppingCart shoppingCart, Double valueBuy) {
 		this.idShoppingCart =  shoppingCart.getId();
 		this.idClient = shoppingCart.getClient().getId();
 		this.emailClient = shoppingCart.getClient().getEmail();
+		this.valueBuy = valueBuy;
 	}
 
 	public Long getIdShoppingCart() {
@@ -36,5 +38,8 @@ public class ShoppingCartMinDTO {
 		this.itens = itens;
 	}
 	
+	public Double getValueBuy () {
+		return valueBuy;
+	}
 	
 }
