@@ -19,11 +19,15 @@
 .image-itemCart{
     height: 150px;
     margin: 15px 10px 0 10px;
-    width: 40%;
+    min-width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .image-itemCart img{
-    height: 110px;
+    height: 60px;
     object-fit: contain;
+
 }
 .information-itemCart .description-itemCart{
     display: flex;
@@ -34,6 +38,7 @@
 
 .description-itemCart span{
     font-family: "Poppins", sans-serif;
+    font-size: 0.85em;
 }
 .description-itemCart .name-ItemCart{
     display: flex;
@@ -44,6 +49,7 @@
  .description-itemCart .name-ItemCart span{
     font-weight: bolder;
     text-align: start;
+    
 }
 .description-itemCart .brand-itemCart span{
     color:#7f858d;

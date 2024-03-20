@@ -17,8 +17,6 @@
 .itens{
     margin:10px 0 10px 10px;
     width: 70%;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.255);
-    
 }
 .title-itensShoppingCart{
     background-color: white;
@@ -32,17 +30,99 @@
 .title-itensShoppingCart h2{
     margin-left: 20px;
     font-family: 'Poppins', sans-serif;
-    font-size: 20px;
+    font-size: 1.3em;
     font-weight: bold;
-    margin-left:5px ;
+    margin-left: 5px ;
 }
 
 .title-itensShoppingCart .icon-title{
     margin-left: 20px;
+    
 }
+
 .information-valueBuy{
     background-color: white;
+    margin: 10px 20px 0 0 ;
+
+    display: grid;
+    grid-template-columns: 15em;
+    grid-template-rows: 50px 50px 50px 120px 120px;
+    align-items: center;
+    
+    height: 400px;
+    padding: 20px;
+}
+
+.title-information-valueBuy{
     display: flex;
-    align-items: baseline;
+    align-items: center;
+    justify-content: start;
+    height: 100%;
+    border-bottom: 0.2px solid rgba(84, 83, 83, 0.564);
+    
+}
+.title-information-valueBuy span{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 0 0 0 0;
+
+}
+
+.quantityItens-information-valueBuy{
+    display: flex;
+    justify-content: space-between;
+}
+
+.quantityItens-information-valueBuy span{
+    font-family: 'Poppins', sans-serif;
+}
+
+.quantityItens-information-valueBuy .value-quantityItens{
+    font-weight: bold;
+}
+
+.frete-informatio-valueBuy{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.frete-informatio-valueBuy span{
+    font-family: 'Poppins', sans-serif;
+}
+
+.frete-informatio-valueBuy .value-frete{
+    font-weight: bold;
+}
+
+.valueBuy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #81c1ec99;
+    height: 70%;
+}
+.valueBuy span{
+    color: #327CAD;
+    font-weight: bold;
+    font-size: 1.5em;
+    font-family: 'poppins', sans-serif;
+}
+.buttons-information-valueBuy {
+    display: flex;
     flex-direction: column;
+    gap: 10px;
+}
+
+.buttons-information-valueBuy button{
+    padding: 10px;
+    font-family: 'poppins',sans-serif;
+    color: white;
+    font-weight: bolder;
+    font-size: 1em;;
+    background-color: #327CAD;
+    border: none;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.14);
+
 }
