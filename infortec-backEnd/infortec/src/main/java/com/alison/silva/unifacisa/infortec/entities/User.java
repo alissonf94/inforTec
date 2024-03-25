@@ -106,6 +106,11 @@ public class User implements UserDetails{
 	public Long getId() {
 		return id;
 	}
+	
+	
+	public List<Favorite> getFavorites() {
+		return favorites;
+	}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
