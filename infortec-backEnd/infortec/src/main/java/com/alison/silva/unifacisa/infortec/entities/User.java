@@ -1,5 +1,6 @@
 package com.alison.silva.unifacisa.infortec.entities;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -31,6 +32,9 @@ public class User implements UserDetails{
 	private String cpf;
 	private String email;
 	private String password;
+	
+	@OneToMany(mappedBy = "client")
+	private List<Favorite> favorites = new ArrayList<>();
 	
 	@JsonFormat(shape = JsonFormat.Shape.STRING)
 	private UserRole role;
