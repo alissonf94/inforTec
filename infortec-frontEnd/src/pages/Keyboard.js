@@ -25,7 +25,7 @@ const Keyboard = ()=>{
                 <div id="products">
                     {products.map((item) =>{
                         return (
-                            <ItemProduct urlImage = {item.imgUrl} price = {item.price} name={item.name} id={item.name}/>
+                            <ItemProduct urlImage = {item.imgUrl} price = {item.price} name={item.name} id={item.id}/>
                     )
                 })}
                 </div>

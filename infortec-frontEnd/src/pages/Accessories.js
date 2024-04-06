@@ -25,7 +25,7 @@ const Accessories = ()=>{
                 <div id="products">
                     {products.map((item) =>{
                         return (
-                            <ItemProduct key= {item.id} urlImage = {item.imgUrl} price = {Number(item.price.toFixed(2))} name={item.name} id={item.name}/>
+                            <ItemProduct key= {item.id} urlImage = {item.imgUrl} price = {Number(item.price.toFixed(2))} name={item.name} id={item.id}/>
                     )
                 })}
                 </div>

@@ -45,7 +45,7 @@ const Home = ()=> {
             <div className="carousel"  ref={carousel}>
                 {promotions.map((item) =>{
                     return(
-                        <ItemPromotion urlImage = {item.imgUrl} price = {item.price} pricePromotion = {item.pricePromotion} name={item.nameProduct} id={item.name}/>
+                        <ItemPromotion urlImage = {item.imgUrl} price = {item.price} pricePromotion = {item.pricePromotion} name={item.nameProduct} id={item.id}/>
                     )
                 }
             )
