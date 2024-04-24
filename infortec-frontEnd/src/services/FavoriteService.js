@@ -9,16 +9,27 @@ function addFavorite (data){
 
 }
 function verifyProductInFavoritesByClient (data){
-    return fetch("http://localhost:8080/favorites",{
+   
+    return fetch(`http://localhost:8080/favorites/check?idProduct=${data.idProduct}&idClient=${data.idClient}`,{
         method: "GET",
         headers: {
             "Content-type" : "Application/json"
         },
-        body: JSON.stringify(data)
     })
+}
+
+function deleteProductInFavorites (idProduct){
+    return fetch(`http://localhost:8080/favorites/${idProduct}`,{
+        method: "DELETE",
+        headers:{
+            "Content-type":"Application/json"
+        }
+    }
+)
 }
 
 module.exports = {
     addFavorite,
-    verifyProductInFavoritesByClient
+    verifyProductInFavoritesByClient,
+    deleteProductInFavorites
 }

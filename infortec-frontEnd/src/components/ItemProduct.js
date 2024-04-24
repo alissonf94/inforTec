@@ -1,12 +1,13 @@
-import { useEffect, useState } from "react";
 import "../styles/ItemProduct.css"
 import { BsHeartFill } from "react-icons/bs";
 import { BsHeart } from "react-icons/bs";
 import ShoppingCartService from "../services/ShoppingCartService"
-import FavoriteService, { verifyProductInFavoritesByClient } from "../services/FavoriteService"
-
+import FavoriteService from "../services/FavoriteService"
+import { useState, useEffect} from "react";
 const ItemProduct = (props)=>{
-    
+    const idClient =  localStorage.getItem("userId");
+    const [isFavorite, setIsFavorite] = useState("");
+
     async function handleAddFavorite (idProduct, idClient){
         const data = {idProduct, idClient}
         await FavoriteService.addFavorite(data) 
@@ -17,31 +18,25 @@ const ItemProduct = (props)=>{
         await ShoppingCartService.addItemCart(data)
     }
    
-    
-   async function vefifyBookInFavoritesByClient (idClient, idProduct){
-    const data = {idClient, idProduct}   
-    const response =  await FavoriteService.verifyProductInFavoritesByClient(data)
-
-    const result = await response.json()
-    console.log(result);
-        if(result === true) {
-            return(
-                <BsHeartFill onClick={()=> handleAddFavorite(props.id, idClient)} className="favorite" color="#327CAD" size={25}/>
-            )
-        }
-        else{
-            return (
-                <BsHeart onClick={()=> handleAddFavorite(props.id, idClient)} className="favorite" color="#327CAD" size={25}/>
-            )
-        }
+    async function handleDeleteProductInFavorites (idProduct){
+        await FavoriteService.deleteProductInFavorites(idProduct)
     }
+    
+   async function vefifyFavoriteInFavorites (idClient, idProduct){
+    const data = {idClient, idProduct}   
 
-    const [idClient, setClient] = useState("")
+    const response =  await FavoriteService.verifyProductInFavoritesByClient(data)
+   
+    const result = await response.json()
+    if(result === true){
+        setIsFavorite(true)
+    }
+    else{
+         setIsFavorite(false)
+    }
+    }
     
-    useEffect(()=>{
-        setClient(localStorage.getItem("userId"))
-    }, [])
-    
+    vefifyFavoriteInFavorites(idClient, props.id);
    return (
         <div className="itemProduct" key={props.id}>
             
@@ -55,7 +50,9 @@ const ItemProduct = (props)=>{
             <div className="prices-itemProduct">
                 <span className="price-itemProduct"> R$ {props.price}</span>
                 <span className= "type-pagament">Á vista</span> 
-                {vefifyBookInFavoritesByClient()} 
+                {isFavorite ? (<BsHeartFill onClick={()=> handleDeleteProductInFavorites(props.id, idClient)} className="favorite" color="#327CAD" size={25}/>):( (
+                <BsHeart onClick={()=> handleAddFavorite(props.id, idClient)} className="favorite" color="#327CAD" size={25}/>
+            ))}
             </div>
             <div className="buy-itemProduct">
                 <button onClick={()=>   handleAddItemCart(props.name, idClient, 1)}>Comprar</button>

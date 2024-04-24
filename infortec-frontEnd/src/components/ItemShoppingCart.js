@@ -23,9 +23,10 @@ const ItemShoppingCart = (props) => {
         }
         const data = {idProduct, newQuantityProduct}
         await ItemProductService.updateItemProduct(data)
-        window.location.reload(true)
     }
+
     const price = props.valueItem.toFixed(2);
+    
     return(
         <div className="itemCart" key={props.id}>
     

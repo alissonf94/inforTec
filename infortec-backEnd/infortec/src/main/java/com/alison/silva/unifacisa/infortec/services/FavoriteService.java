@@ -50,4 +50,23 @@ public class FavoriteService {
 	 return new FavoriteMinDTO(productMinDTO, idClient);
 	 
 	}
+	
+	public void deleteById (Long idProduct) {
+		Favorite favorite =  favoriteRepository.findAll().stream().filter(p -> p.getProduct().getId().equals(idProduct)).findFirst().orElse(null);
+		favoriteRepository.deleteById(favorite.getId());
+	}
+	
+	public Boolean verifyProductInFavoritesByClient (Long idProduct, Long idClient) {
+		Product product = productRepository.findById(idProduct).orElse(null);
+		Favorite favorite = favoriteRepository.findByProduct(product);
+		User user = userRepository.findById(idClient).orElse(null);
+		
+		if(favorite!= null) {
+			return  favorite.getClient().equals(user) ? true : false;
+		}
+		
+		return false;
+		
+		
+	}
 }

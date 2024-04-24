@@ -37,6 +37,8 @@ public class SecurityConfigurations {
 						requestMatchers(HttpMethod.PUT, "/shoppingCarts").permitAll().requestMatchers(HttpMethod.DELETE,"/itemProduct/{id}").permitAll()
 						.requestMatchers(HttpMethod.POST,"/buys").permitAll().requestMatchers(HttpMethod.GET,"/buys/{id}").permitAll().
 						requestMatchers(HttpMethod.PUT,"/itemProduct").permitAll().requestMatchers(HttpMethod.POST, "/favorites").permitAll().
+						requestMatchers(HttpMethod.DELETE, "/favorites/{idProduct}").permitAll().requestMatchers(HttpMethod.GET, "/favorites").permitAll().
+						requestMatchers(HttpMethod.GET, "/favorites/check").permitAll().
 						anyRequest().authenticated())
 
 				.addFilterBefore(securityFilter,UsernamePasswordAuthenticationFilter.class).build();	

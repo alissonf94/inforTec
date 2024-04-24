@@ -11,7 +11,6 @@ const Accessories = ()=>{
         const result = await ProductService.findByCategory("Acessórios");
         
         const data = await result.json()
-
         setProduct(data)
     }
 

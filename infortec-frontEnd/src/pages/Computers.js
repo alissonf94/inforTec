@@ -17,7 +17,7 @@ const Computers = ()=>{
 
     useEffect(() => {
         getProducts()
-    }, [])
+    },[products])
     return (
         <div id="mainProduct">
                 <NavBar/>
