@@ -32,7 +32,7 @@ const ItemShoppingCart = (props) => {
     
             <div className="information-itemCart"> 
                 <div className="image-itemCart">
-                    <img src={props.urlImage} />
+                    <img src={props.urlImage} alt="  product" />
                 </div>
 
                 <div className="description-itemCart">

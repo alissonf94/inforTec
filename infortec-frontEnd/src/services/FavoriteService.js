@@ -27,9 +27,28 @@ function deleteProductInFavorites (idProduct){
     }
 )
 }
+function deleteById(idFavorite){
+    return fetch(`http://localhost:8080/favorites?idFavorite=${idFavorite}`,{
+        method: "DELETE",
+        headers:{
+            "Content-type":"Application/json"
+        }
+    }
+)
+}
+function findAll (idClient){
+    return fetch(`http://localhost:8080/favorites/${idClient}`, {
+        method: "GET",
+        headers: {
+            "content-type" : "application-json"
+        }
+    })
+}
 
 module.exports = {
     addFavorite,
     verifyProductInFavoritesByClient,
-    deleteProductInFavorites
+    deleteProductInFavorites,
+    findAll,
+    deleteById
 }

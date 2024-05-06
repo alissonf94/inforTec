@@ -17,7 +17,7 @@ const navigate = useNavigate()
                 </div>
                 
                 <div id="icons">
-                    <BsHeart color="#fff"  size={22} />
+                    <BsHeart color="#fff" onClick={()=> navigate("/favorites")}  size={22} />
                     <BsCart3 onClick={()=> navigate("/shoppingCart")} color="#ffff"  size={22}/>
                     <BsPersonCircle color="#fff"  size={23}/>
                 </div>

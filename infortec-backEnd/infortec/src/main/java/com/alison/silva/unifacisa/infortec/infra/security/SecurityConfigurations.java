@@ -38,8 +38,8 @@ public class SecurityConfigurations {
 						.requestMatchers(HttpMethod.POST,"/buys").permitAll().requestMatchers(HttpMethod.GET,"/buys/{id}").permitAll().
 						requestMatchers(HttpMethod.PUT,"/itemProduct").permitAll().requestMatchers(HttpMethod.POST, "/favorites").permitAll().
 						requestMatchers(HttpMethod.DELETE, "/favorites/{idProduct}").permitAll().requestMatchers(HttpMethod.GET, "/favorites").permitAll().
-						requestMatchers(HttpMethod.GET, "/favorites/check").permitAll().
-						anyRequest().authenticated())
+						requestMatchers(HttpMethod.GET, "/favorites/check").permitAll().requestMatchers(HttpMethod.GET, "/favorites/{idProduct}").permitAll().
+						requestMatchers(HttpMethod.DELETE,"/favorites").permitAll().anyRequest().authenticated())
 
 				.addFilterBefore(securityFilter,UsernamePasswordAuthenticationFilter.class).build();	
 		}

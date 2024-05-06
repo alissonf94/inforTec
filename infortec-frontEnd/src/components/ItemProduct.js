@@ -3,7 +3,8 @@ import { BsHeartFill } from "react-icons/bs";
 import { BsHeart } from "react-icons/bs";
 import ShoppingCartService from "../services/ShoppingCartService"
 import FavoriteService from "../services/FavoriteService"
-import { useState, useEffect} from "react";
+import { useState} from "react";
+
 const ItemProduct = (props)=>{
     const idClient =  localStorage.getItem("userId");
     const [isFavorite, setIsFavorite] = useState("");
@@ -34,14 +35,16 @@ const ItemProduct = (props)=>{
     else{
          setIsFavorite(false)
     }
-    }
+}
     
     vefifyFavoriteInFavorites(idClient, props.id);
+  
+   
    return (
         <div className="itemProduct" key={props.id}>
             
             <div className="images-itemProduct">
-                < img src={props.urlImage} className="image-itemProduct"></img>
+                < img src={props.urlImage} alt="product" className="image-itemProduct"></img>
             </div>
 
             <div className="name-itemProduct">

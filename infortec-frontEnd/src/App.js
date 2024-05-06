@@ -8,6 +8,7 @@ import "./App.css"
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Keyboard from './pages/Keyboard'
 import ShoppingCart from "./pages/ShoppingCart"
+import Favorite from "./pages/Favorite"
 function App() {
   const defaultRouter = createBrowserRouter([
     {
@@ -41,6 +42,10 @@ function App() {
     {
       path: "/shoppingCart",
       element: <ShoppingCart/>
+    },
+    {
+      path: "/favorites",
+      element: <Favorite/>
     }
   ])
 

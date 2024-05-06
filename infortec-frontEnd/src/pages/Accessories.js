@@ -16,7 +16,7 @@ const Accessories = ()=>{
 
     useEffect(() => {
         getProducts()
-    }, [])
+    }, [products])
     
     return (
         <div id="mainProduct">

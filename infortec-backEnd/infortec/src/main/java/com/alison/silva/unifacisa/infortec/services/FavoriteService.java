@@ -1,5 +1,7 @@
 package com.alison.silva.unifacisa.infortec.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
@@ -47,11 +49,13 @@ public class FavoriteService {
 		ProductMinDTO productMinDTO = new ProductMinDTO(product);
 		
 	 favoriteRepository.save(favorite);
-	 return new FavoriteMinDTO(productMinDTO, idClient);
+	 return new FavoriteMinDTO(productMinDTO, idClient, favorite.getId());
 	 
 	}
-	
-	public void deleteById (Long idProduct) {
+	public void deleteById(Long id) {
+		favoriteRepository.deleteById(id);
+	}
+	public void deleteByIdPrduct (Long idProduct) {
 		Favorite favorite =  favoriteRepository.findAll().stream().filter(p -> p.getProduct().getId().equals(idProduct)).findFirst().orElse(null);
 		favoriteRepository.deleteById(favorite.getId());
 	}
@@ -67,6 +71,11 @@ public class FavoriteService {
 		
 		return false;
 		
-		
+	}
+	
+	public List<FavoriteMinDTO> findAll(Long idClient){
+		List<Favorite> favoritesByidClient = favoriteRepository.findAll().stream().filter(p-> p.getClient().getId().equals(idClient)).toList();
+		List<FavoriteMinDTO> favoritesDto = favoritesByidClient.stream().map(p-> new FavoriteMinDTO(new ProductMinDTO(p.getProduct()), idClient, p.getId())).toList();
+		return favoritesDto;
 	}
 }

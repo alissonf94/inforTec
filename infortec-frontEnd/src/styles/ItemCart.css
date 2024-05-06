@@ -32,7 +32,7 @@
 .information-itemCart .description-itemCart{
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     width: 80%;
 }
 
@@ -42,8 +42,8 @@
 }
 .description-itemCart .name-ItemCart{
     display: flex;
-    justify-content: start;
-    align-items: start;
+    justify-content: flex-start;
+    align-items: flex-start;
 
 }
  .description-itemCart .name-ItemCart span{

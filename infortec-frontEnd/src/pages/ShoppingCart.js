@@ -14,7 +14,6 @@ const ShoppingCart = ()=>{
    async function getItemsProducts (){
         try {
             const result  = await ShoppingCartService.getItemsProducts(idClient)
-
             const data = await result.json()
             setItensProduct(data.itens)
             const value = parseFloat(data.valueBuy).toFixed(2)

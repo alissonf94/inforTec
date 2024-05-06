@@ -17,7 +17,7 @@ const Keyboard = ()=>{
 
     useEffect(() => {
         getProducts()
-    }, [])
+    }, [products])
 
     return(
         <div id="mainProduct">

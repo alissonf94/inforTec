@@ -17,7 +17,7 @@ const Monitors = ()=>{
 
     useEffect(() => {
         getProducts()
-    }, [])
+    }, [products])
     return (
         <div id="mainProduct">
             <NavBar/>
